@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  build:
+  english:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -18,5 +18,16 @@ jobs:
           docker run --rm -v $(pwd):/docs spa-sphinx make html
       - uses: actions/upload-artifact@v1
         with:
-          name: document
+          name: English
+          path: _build/html
+  japanese:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          docker build -t spa-sphinx .
+          docker run --rm -v $(pwd):/docs spa-sphinx make -e SPHINXOPTS="-D language='ja'" html
+      - uses: actions/upload-artifact@v1
+        with:
+          name: Japanese
           path: _build/html

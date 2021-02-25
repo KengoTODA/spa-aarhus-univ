@@ -9,6 +9,12 @@ docker build -t spa-sphinx .
 docker run --rm -v $(pwd):/docs spa-sphinx make html
 ```
 
+## How to translate
+```sh
+docker run --rm -v $(pwd):/docs spa-sphinx make gettext
+docker run --rm -v $(pwd):/docs spa-sphinx sphinx-intl update -p _build/gettext -l ja
+```
+
 ## Copyright
 
 Copyright © 2008–2020 Anders Møller and Michael I. Schwartzbach
