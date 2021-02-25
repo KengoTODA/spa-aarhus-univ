@@ -8,6 +8,8 @@ and other tools that can help programmers. A static program analyzer is a progra
 in programming, what can be more fun than writing programs that analyze
 programs?
 
+.. TODO: reasonを解析と訳してよいのか？analyseとの違いは？
+
 As known from Turing and Rice, all nontrivial properties of the behavior
 of programs written in common programming languages are mathematically
 undecidable. This means that automated reasoning of software generally must

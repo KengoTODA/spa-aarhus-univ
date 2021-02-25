@@ -6,12 +6,19 @@ Build in the docker container like:
 
 ```sh
 docker build -t spa-sphinx .
+# build the document in English
 docker run --rm -v $(pwd):/docs spa-sphinx make html
 ```
 
 ## How to translate
+
+This document uses [Sphinx's internationalization feature](https://www.sphinx-doc.org/en/master/usage/advanced/intl.html) to generate contents in Japanese.
+
 ```sh
+docker build -t spa-sphinx .
+# reflect changes in .rst file to .po file
 docker run --rm -v $(pwd):/docs spa-sphinx make gettext
+# build the document in Japanese
 docker run --rm -v $(pwd):/docs spa-sphinx sphinx-intl update -p _build/gettext -l ja
 ```
 

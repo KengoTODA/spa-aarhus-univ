@@ -31,6 +31,12 @@ msgid ""
 "other programs. For anyone interested in programming, what can be more "
 "fun than writing programs that analyze programs?"
 msgstr ""
+"静的プログラム解析はプログラムを実行することなくその挙動を解析する芸術である。"
+"これはコンパイラが効率的なコードに最適化するときだけではなく、自動的にエラーを"
+"発見するなどプログラムを助ける道具にも効果的である。静的プログラム解析器は"
+"他のプログラムの挙動を解析するプログラムである。"
+"プログラミングに関心を持つ者にとって、プログラムを解析するプログラムを書くこと以上に"
+"楽しいことがあるだろうか？"
 
 #: ../../preface.rst:11
 msgid ""
