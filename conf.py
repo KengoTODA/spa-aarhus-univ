@@ -28,6 +28,7 @@ author = 'Anders Møller and Michael I. Schwartzbach'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'sphinx.ext.graphviz'
 ]
 
 # Add any paths that contain templates here, relative to this directory.

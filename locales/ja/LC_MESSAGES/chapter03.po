@@ -4,6 +4,7 @@
 # Analysis package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Static Program Analysis \n"
@@ -17,26 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.0\n"
 
-#: ../../index.rst:9
-msgid "Contents:"
-msgstr "コンテンツ:"
-
-#: ../../index.rst:7
-msgid "Welcome to Static Program Analysis's documentation!"
-msgstr "静的プログラム解析のページにようこそ！"
-
-#: ../../index.rst:28
-msgid "Indices and tables"
-msgstr "索引と表"
-
-#: ../../index.rst:30
-msgid ":ref:`genindex`"
+#: ../../chapter03.rst:2
+msgid "Type Analysis"
 msgstr ""
-
-#: ../../index.rst:31
-msgid ":ref:`search`"
-msgstr ""
-
-#~ msgid ":ref:`modindex`"
-#~ msgstr ""
 
