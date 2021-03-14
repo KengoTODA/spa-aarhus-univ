@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Static Program Analysis \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-25 10:19+0000\n"
+"POT-Creation-Date: 2021-03-14 12:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,14 +26,33 @@ msgid "Welcome to Static Program Analysis's documentation!"
 msgstr "静的プログラム解析のページにようこそ！"
 
 #: ../../index.rst:28
+msgid "Copyright"
+msgstr ""
+
+#: ../../index.rst:30
+msgid "Copyright © 2008–2020 Anders Møller and Michael I. Schwartzbach"
+msgstr ""
+
+#: ../../index.rst:32
+msgid "Department of Computer Science Aarhus University, Denmark"
+msgstr ""
+
+#: ../../index.rst:35
+msgid ""
+"This work is licensed under the Creative Commons Attribution-"
+"NonCommercialNoDerivatives 4.0 International License. To view a copy of "
+"this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/."
+msgstr ""
+
+#: ../../index.rst:38
 msgid "Indices and tables"
 msgstr "索引と表"
 
-#: ../../index.rst:30
+#: ../../index.rst:40
 msgid ":ref:`genindex`"
 msgstr ""
 
-#: ../../index.rst:31
+#: ../../index.rst:41
 msgid ":ref:`search`"
 msgstr ""
 
