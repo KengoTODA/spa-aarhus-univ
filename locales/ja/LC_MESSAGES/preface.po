@@ -54,6 +54,15 @@ msgid ""
 "reports many false positives or if it is too slow to fit into real-world "
 "software development processes."
 msgstr ""
+"TuringとRiceによって知られるように、一般的なプログラミング言語で書かれたプログラムの"
+"振る舞いに関するすべての非自明な特性は、数学的に決定不可能である。"
+"すなわち、ソフトウェアの自動推論には一般的に近似性が求められる。"
+"同様にテスト、実際にプログラムを実行して出力を確認する行いは、"
+"エラーを発見することはできてもエラーがないことは示せないのが一般的である。"
+"これに対し、静的プログラム解析では、適切な近似値を用いることでプログラムのすべての実行可能性をチェックし、その特性を保証できる。"
+"このような解析を開発する際の重要な課題のひとつは、実用的な精度と効率をいかにして確保するかである。"
+"バグ発見のために開発された解析でも、誤検出が多かったり速度が遅すぎて"
+"実際のソフトウェア開発プロセスに適合しないようでは、誰も使わないからである。"
 
 #: ../../preface.rst:24
 msgid ""
@@ -90,6 +99,7 @@ msgid ""
 "The analyses that we cover are expressed using different kinds of "
 "constraint systems, each with their own constraint solvers:"
 msgstr ""
+"私たちが扱う解析はさまざまな種類の制約システムで表現され、それぞれに固有の制約ソルバーを有する:"
 
 #: ../../preface.rst:44
 msgid "term unification constraints, with an almost-linear union-find algorithm,"
