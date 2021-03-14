@@ -2,24 +2,17 @@ Japanese translation of https://cs.au.dk/~amoeller/spa/spa.pdf
 
 ## How to build
 
-Build in the docker container like:
-
-```sh
-docker build -t spa-sphinx .
-# build the document in English
-docker run --rm -v $(pwd):/docs spa-sphinx make html
-```
-
-## How to translate
-
 This document uses [Sphinx's internationalization feature](https://www.sphinx-doc.org/en/master/usage/advanced/intl.html) to generate contents in Japanese.
 
 ```sh
+# build the docker container to run Sphinx
 docker build -t spa-sphinx .
-# reflect changes in .rst file to .po file
+# reflect changes in .rst file to .pot file
 docker run --rm -v $(pwd):/docs spa-sphinx make gettext
-# build the document in Japanese
+# reflect changes in .pot file to .po file
 docker run --rm -v $(pwd):/docs spa-sphinx sphinx-intl update -p _build/gettext -l ja
+# build the document in Japansese
+docker run --rm -v $(pwd):/docs spa-sphinx make html
 ```
 
 ## Copyright
