@@ -16,11 +16,11 @@ these different applications.
 program being compiled, in order to generate efficient code. A few examples of
 such properties are:
 
-* Does the program contain dead code, or more specifically, is function funreachable from main? If so, the code size can be reduced.
+* Does the program contain dead code, or more specifically, is function unreachable from main? If so, the code size can be reduced.
 * Is the value of some expression inside a loop the same in every iteration? If so, the expression can be moved outside the loop to avoid redundant computations.
-* Does the value of variable x depend on the program input? If not, it could be precomputed at compile time.
-* What are the lower and upper bounds of the integer variable x? The answer may guide the choice of runtime representation of the variable.
-* Do :math:`p` and ``q`` point to disjoint data structures in memory? That may enable parallel processing.
+* Does the value of variable :math:`x` depend on the program input? If not, it could be precomputed at compile time.
+* What are the lower and upper bounds of the integer variable :math:`x`? The answer may guide the choice of runtime representation of the variable.
+* Do :math:`p` and :math:`q` point to disjoint data structures in memory? That may enable parallel processing.
 
 **Analysis for program correctness** The most successful analysis tools that have
 been designed to detect errors (or verify absence of errors) target generic correctness properties that apply to most or all programs written in specific programming languages. In unsafe languages like C, such errors sometimes lead to
