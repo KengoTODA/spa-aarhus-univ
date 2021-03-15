@@ -34,6 +34,12 @@ Aarhus University, Denmark
 
 This work is licensed under the Creative Commons Attribution-NonCommercialNoDerivatives 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
 
+About this Japanese translation
+===============================
+
+This Japanese translation is written by Kengo TODA, a member of `SpotBugs team <http://github.com/spotbugs/>`_.
+If you found any problems, feel free to `issue tickets at GitHub <https://github.com/KengoTODA/spa-aarhus-univ/issues>`_.
+
 Indices and tables
 ==================
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Static Program Analysis \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-14 12:07+0000\n"
+"POT-Creation-Date: 2021-03-15 03:41+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,7 +27,7 @@ msgstr "静的プログラム解析のページにようこそ！"
 
 #: ../../index.rst:28
 msgid "Copyright"
-msgstr ""
+msgstr "著作権表記"
 
 #: ../../index.rst:30
 msgid "Copyright © 2008–2020 Anders Møller and Michael I. Schwartzbach"
@@ -45,17 +45,28 @@ msgid ""
 msgstr ""
 
 #: ../../index.rst:38
+msgid "About this Japanese translation"
+msgstr "この日本語訳について"
+
+#: ../../index.rst:40
+msgid ""
+"This Japanese translation is written by Kengo TODA, a member of `SpotBugs"
+" team <http://github.com/spotbugs/>`_. If you found any problems, feel "
+"free to `issue tickets at GitHub <https://github.com/KengoTODA/spa-"
+"aarhus-univ/issues>`_."
+msgstr ""
+"この日本語訳は `SpotBugsチーム <http://github.com/spotbugs/>`_ の一員であるKengo TODAが作成しました。"
+"なにか問題を見つけましたら、お気軽に `GitHubにて報告ください <https://github.com/KengoTODA/spa-"
+"aarhus-univ/issues>`_ 。"
+
+#: ../../index.rst:44
 msgid "Indices and tables"
 msgstr "索引と表"
 
-#: ../../index.rst:40
+#: ../../index.rst:46
 msgid ":ref:`genindex`"
 msgstr ""
 
-#: ../../index.rst:41
+#: ../../index.rst:47
 msgid ":ref:`search`"
 msgstr ""
-
-#~ msgid ":ref:`modindex`"
-#~ msgstr ""
-

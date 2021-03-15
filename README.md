@@ -1,4 +1,4 @@
-Japanese translation of https://cs.au.dk/~amoeller/spa/spa.pdf
+Japanese translation of [the lecture notes on Static Program Analysis held at the Department of Computer Science, Aarhus University](https://cs.au.dk/~amoeller/spa/).
 
 ## How to build
 
