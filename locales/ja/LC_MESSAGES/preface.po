@@ -84,6 +84,16 @@ msgid ""
 "when implementing analyses, we often solve the constraints on-the-fly, as"
 " they are generated, without representing them explicitly."
 msgstr ""
+"このノートでは、プログラムの静的解析の原理と応用を紹介する。"
+"基本的な型解析、格子理論、制御フローグラフ、データフロー解析、固定小数点アルゴリズム、ワイドニングとナローニング、"
+"パス感度、リレーショナル解析、プロシージャ間解析、文脈依存、制御フロー解析、いくつかのポインタ解析、そして"
+"セマンティクスに基づく抽象的解釈の重要なコンセプトを扱う。"
+"ポインタと第一級関数を持つ小さな命令型プログラミング言語を対象に、数多くの異なる静的解析を行い、"
+"ここで紹介する技術を説明する。適切な制約システムにより、解析タスクを、"
+"プログラムコードから制約を生成するフロントエンドと、制約を解決して解析結果を生成するバックエンドに"
+"概念的に分割する、制約ベースの静的解析アプローチを採用している。"
+"このアプローチにより、解析の精度を決定する解析仕様と、解析のパフォーマンスに重要なアルゴリズムの側面とを"
+"分離できる。実際に解析を行う多くの場合は、制約条件を明示的に表現することなく、生成された制約条件をその場で解く。"
 
 #: ../../preface.rst:37
 msgid ""
@@ -93,6 +103,9 @@ msgid ""
 "consider Turing complete languages (like most programming languages used "
 "in ordinary software development)."
 msgstr ""
+"ここでは完全に自動化されていて（例えば、ループの外に出せる不変変数や型注釈のようなプログラマを指導するものは含まない）、"
+"保守的（健全だが不完全）な解析に焦点を当て、（通常のソフトウェア開発で使用されるほとんどのプログラミング言語のように）"
+"チューリング完全な言語のみを対象とする。"
 
 #: ../../preface.rst:41
 msgid ""
@@ -103,17 +116,18 @@ msgstr ""
 
 #: ../../preface.rst:44
 msgid "term unification constraints, with an almost-linear union-find algorithm,"
-msgstr ""
+msgstr "ほぼ線形の組合わせ検索アルゴリズムで実装された項の単一化制約"
 
 #: ../../preface.rst:45
 msgid "conditional subset constraints, with a cubic-time algorithm, and"
-msgstr ""
+msgstr ":math:`O(n^3)` のアルゴリズムで実装された条件付きサブセット制約"
 
 #: ../../preface.rst:46
 msgid ""
 "monotone constraints over lattices, with variations of fixed-point "
 "solvers."
 msgstr ""
+"様々な固定小数点ソルバーを持つ格子上の単調な制約"
 
 #: ../../preface.rst:48
 msgid ""
@@ -122,6 +136,9 @@ msgid ""
 "language concepts and the basics of compiler construction and "
 "computability theory."
 msgstr ""
+"本書の表現は、正確でありながら過度にフォーマルではないことを意図している。"
+"読者は高度なプログラミング言語の概念と、コンパイラの実装や計算可能性理論の基礎に"
+"精通していることを前提とする。"
 
 #: ../../preface.rst:52
 msgid ""
@@ -130,4 +147,6 @@ msgid ""
 "additional exercises: `https://cs.au.dk/˜amoeller/spa/ "
 "<https://cs.au.dk/˜amoeller/spa/>`_"
 msgstr ""
-
+"このノートには、講義のスライド、取り上げたアルゴリズムの（Scalaで書かれた）ほとんどの実装、"
+"追加の演習問題を提供するWebサイトが付属している: `https://cs.au.dk/˜amoeller/spa/ "
+"<https://cs.au.dk/˜amoeller/spa/>`_"
