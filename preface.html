@@ -1,0 +1,253 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>前書き &mdash; Static Program Analysis  ドキュメント</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="導入" href="chapter01.html" />
+    <link rel="prev" title="静的プログラム解析のページにようこそ！" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Static Program Analysis
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">コンテンツ:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">前書き</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter01.html">導入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter02.html">A Tiny Imperative Programming Language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter03.html">Type Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter04.html">Lattice Theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter05.html">Dataflow Analysis with Monotone Frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter06.html">Widening</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter07.html">Path Sensitivity and Relational Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter08.html">Interprocedural Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter09.html">Control Flow Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter10.html">Pointer Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter11.html">Abstract Interpretation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Static Program Analysis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>前書き</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/preface.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="preface">
+<h1>前書き<a class="headerlink" href="#preface" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>静的プログラム解析はプログラムを実行することなくその挙動を解析する芸術である。これはコンパイラが効率的なコードに最適化するときだけではなく、自動的にエラーを発見するなどプログラムを助ける道具にも効果的である。静的プログラム解析器は他のプログラムの挙動を解析するプログラムである。プログラミングに関心を持つ者にとって、プログラムを解析するプログラムを書くこと以上に楽しいことがあるだろうか？</p>
+<p>TuringとRiceによって知られるように、一般的なプログラミング言語で書かれたプログラムの振る舞いに関するすべての非自明な特性は、数学的に決定不可能である。すなわち、ソフトウェアの自動推論には一般的に近似性が求められる。同様にテスト、実際にプログラムを実行して出力を確認する行いは、エラーを発見することはできてもエラーがないことは示せないのが一般的である。これに対し、静的プログラム解析では、適切な近似値を用いることでプログラムのすべての実行可能性をチェックし、その特性を保証できる。このような解析を開発する際の重要な課題のひとつは、実用的な精度と効率をいかにして確保するかである。バグ発見のために開発された解析でも、誤検出が多かったり速度が遅すぎて実際のソフトウェア開発プロセスに適合しないようでは、誰も使わないからである。</p>
+<p>These notes present principles and applications of static analysis of programs. We cover basic type analysis, lattice theory, control flow graphs, dataflow
+analysis, fixed-point algorithms, widening and narrowing, path sensitivity, relational analysis, interprocedural analysis, context sensitivity, control-flow analysis, several flavors of pointer analysis, and key concepts of semantics-based
+abstract interpretation. A tiny imperative programming language with pointers and first-class functions is subjected to numerous different static analyses
+illustrating the techniques that are presented.
+We take a <em>constraint-based approach</em> to static analysis where suitable constraint
+systems conceptually divide the analysis task into a front-end that generates
+constraints from program code and a back-end that solves the constraints to
+produce the analysis results. This approach enables separating the analysis
+specification, which determines its precision, from the algorithmic aspects that
+are important for its performance. In practice when implementing analyses, we
+often solve the constraints on-the-fly, as they are generated, without representing
+them explicitly.</p>
+<p>We focus on analyses that are fully automatic (i.e., not involving programmer guidance, for example in the form of loop invariants or type annotations)
+and conservative (sound but incomplete), and we only consider Turing complete languages (like most programming languages used in ordinary software
+development).</p>
+<p>私たちが扱う解析はさまざまな種類の制約システムで表現され、それぞれに固有の制約ソルバーを有する:</p>
+<ul class="simple">
+<li><p>term unification constraints, with an almost-linear union-find algorithm,</p></li>
+<li><p>conditional subset constraints, with a cubic-time algorithm, and</p></li>
+<li><p>monotone constraints over lattices, with variations of fixed-point solvers.</p></li>
+</ul>
+<p>The style of presentation is intended to be precise but not overly formal.
+The readers are assumed to be familiar with advanced programming language
+concepts and the basics of compiler construction and computability theory.</p>
+<p>The notes are accompanied by a web site that provides lecture slides, an
+implementation (in Scala) of most of the algorithms we cover, and additional
+exercises: <a class="reference external" href="https://cs.au.dk/˜amoeller/spa/">https://cs.au.dk/˜amoeller/spa/</a></p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="chapter01.html" class="btn btn-neutral float-right" title="導入" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="静的プログラム解析のページにようこそ！" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Anders Møller and Michael I. Schwartzbach.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

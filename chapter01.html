@@ -1,0 +1,410 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>導入 &mdash; Static Program Analysis  ドキュメント</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="A Tiny Imperative Programming Language" href="chapter02.html" />
+    <link rel="prev" title="前書き" href="preface.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Static Program Analysis
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">コンテンツ:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="preface.html">前書き</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">導入</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#applications-of-static-program-analysis">1.1 静的プログラム解析の応用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#approximative-answers">1.2. おおよその回答</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#undecidability-of-program-correctness">1.3 Undecidability of Program Correctness</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chapter02.html">A Tiny Imperative Programming Language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter03.html">Type Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter04.html">Lattice Theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter05.html">Dataflow Analysis with Monotone Frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter06.html">Widening</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter07.html">Path Sensitivity and Relational Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter08.html">Interprocedural Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter09.html">Control Flow Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter10.html">Pointer Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter11.html">Abstract Interpretation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Static Program Analysis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>導入</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/chapter01.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="introduction">
+<h1>導入<a class="headerlink" href="#introduction" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>静的プログラム解析はプログラムのとりうる挙動に関する質問に自動的に回答することを目的とする。この章では、静的プログラム解析がなぜ有用で興味深いのかを解説し、また解析ツールの基本的な特徴について議論する。</p>
+<div class="section" id="applications-of-static-program-analysis">
+<h2>1.1 静的プログラム解析の応用<a class="headerlink" href="#applications-of-static-program-analysis" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>静的プログラム解析は1960年代初頭、コンパイラの最適化から用いられた。さらに最近は不具合の発見や検証のための道具として、またIDEに組み込まれプログラム開発を助けている。以下では、これらの異なる応用で発生するプログラムの動作に関する問題について、いくつかの例を示します。</p>
+<p><strong>プログラム最適化のための解析</strong> コンパイラの最適化（インタプリタの実行時コンパイラを含む）は効率的なコードを生成するために、対象となるプログラムの様々な特性について知る必要がある。特性の一例を以下に挙げます:</p>
+<ul class="simple">
+<li><p>プログラムはデッドコード、あるいはより具体的に、mainから到達不能な関数 <span class="math notranslate nohighlight">\(f\)</span> を含んでいるか？もし含むなら、そのコードを削ることができる。</p></li>
+<li><p>ループ内に含まれる式はそのすべての反復において同じ値を取るか？その場合は、その式をループの外に動かして無駄な計算を省くことができる。</p></li>
+<li><p>変数 <span class="math notranslate nohighlight">\(x\)</span> の値はプログラムに対する入力に依存しているか？そうではない場合、コンパイル時に事前に計算しておくことができる。</p></li>
+<li><p>整数の値をとる変数 <span class="math notranslate nohighlight">\(x\)</span> の上限と下限はなにか？その答えによっては、変数の実行時表現を決める指針を得られる。</p></li>
+<li><p><span class="math notranslate nohighlight">\(p\)</span> と <span class="math notranslate nohighlight">\(q\)</span> はメモリ上の独立したデータ構造を指しているか？その場合は並列処理を行えるかもしれない。</p></li>
+</ul>
+<p><strong>プログラムの正しさの解析</strong> エラーを検出する（またはエラーがないことを検証する）ために設計され最も成功した解析ツールは、特定のプログラミング言語で書かれたプログラムに汎用的に適用される一般的な正しさの特性を対象としています。Cのような不安全な言語では、こうした一般的な問題はときに致命的な脆弱性の原因となります。Javaのようなより安全な言語では、このようなエラーは一般的にそれほど深刻ではないものの、それでもプログラムのクラッシュを引き起こすことがあります。特性の一例を以下に挙げます:</p>
+<ul class="simple">
+<li><p>nullポインタの解釈、ゼロによる除算、または演算オーバーフローを引き起こす入力は存在するか？</p></li>
+<li><p>すべての変数は読み取られる前に初期化されているか？</p></li>
+<li><p>配列は常にその範囲内でアクセスされているか？</p></li>
+<li><p>ぶらさがった参照、例えばすでに開放されたメモリへのポインタがあるか？</p></li>
+<li><p>すべての入力においてプログラムが終了するか？OSのようなOSのようなリアクティブなシステムであっても、デバイスドライバのルーチンなど、個々のソフトウェア部品は常に終了することが期待されています。</p></li>
+</ul>
+<p>その他の正確さを示す特性は言語ではなく個別のプログラム（またはライブラリ）の仕様によって決まります。例えば:</p>
+<ul class="simple">
+<li><p>すべての表明は成功することが保証されているか？表明はすべての実行において保たれると期待されるプログラム固有の正確さを示している。</p></li>
+<li><p>next関数を呼び出す前に必ずhasNext関数が呼び出されているか、read関数の前にopen関数が呼び出されているか？多くのライブラリはこのような型状態の正しさとも呼ばれる特性を持っている。</p></li>
+<li><p>対象のプログラムは何らかの入力に対してActivityNotFoundExceptionあるいはSQLiteExceptionを投げるか？</p></li>
+</ul>
+<p>ウェブやモバイルのソフトウェアでは、情報の流れの正確さは非常に重要な特性である:</p>
+<ul class="simple">
+<li><p>信頼されていないユーザによって入力された値が検証されないままファイルシステム操作に用いられることがあるか？あるならば <em>整合性</em> の違反となる。</p></li>
+<li><p>秘密情報が公開されてしまうことはあるか？そのような状況は <em>機密性</em> の違反となる。</p></li>
+</ul>
+<p>並行処理（並列または分散コンピューティング）やイベント駆動型の実行モデルの利用が増えることで、さらなるプログラムの動作に関する問題が生じる:</p>
+<ul class="simple">
+<li><p>データの競合が生じるか？マルチスレッドプログラミングにおける問題の多くは、2つのスレッドが共有された資源を必要な同期をとることなく扱うことによる。</p></li>
+<li><p>プログラムあるいはその一部がデッドロックを起こすか？これはマルチスレッドプログラミングにおいて同期のためロックを用いる場合にしばしば懸念となる。</p></li>
+</ul>
+<p><strong>Analysis for program development</strong> Modern IDEs perform various kinds of
+program analysis to support debugging, refactoring, and program understanding. This involves questions, such as:</p>
+<ul class="simple">
+<li><p>Which functions may possibly be called on line 117, or conversely, where can function <span class="math notranslate nohighlight">\(f\)</span> possibly be called from? Function inlining and other refactorings rely on such information.</p></li>
+<li><p>At which program points could <span class="math notranslate nohighlight">\(x\)</span> be assigned its current value? Can the value of variable <span class="math notranslate nohighlight">\(x\)</span> affect the value of variable <span class="math notranslate nohighlight">\(y\)</span>? Such questions often arise when programmers are trying to understand large codebases and during debugging when investigating why a certain bug appears.</p></li>
+<li><p>What types of values can variable <span class="math notranslate nohighlight">\(x\)</span> have? This kind of question often arises with programming languages where type annotations are optional or entirely absent, for example OCaml, JavaScript, or Python.</p></li>
+</ul>
+</div>
+<div class="section" id="approximative-answers">
+<h2>1.2. おおよその回答<a class="headerlink" href="#approximative-answers" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Regarding correctness, programmers routinely use testing to gain confidence that their programs work as intended, but as famously stated by Dijkstra [Dij70]:
+<em>“Program testing can be used to show the presence of bugs, but never to show their absence.”</em>
+Ideally we want guarantees about what our programs may do for all possible inputs, and we want these guarantees to be provided automatically, that is, by programs.
+A <em>program analyzer</em> is such a program that takes other programs as input and decides whether or not they have a certain property.</p>
+<p>Reasoning about the behavior of programs can be extremely difficult, even
+for small programs. As an example, does the following program code terminate
+on every integer input n (assuming arbitrary-precision integers)?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="p">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="o">//</span> <span class="k">if</span> <span class="n">n</span> <span class="ow">is</span> <span class="n">even</span><span class="p">,</span> <span class="n">divide</span> <span class="n">it</span> <span class="n">by</span> <span class="n">two</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+  <span class="k">else</span> <span class="o">//</span> <span class="k">if</span> <span class="n">n</span> <span class="ow">is</span> <span class="n">odd</span><span class="p">,</span> <span class="n">multiply</span> <span class="n">by</span> <span class="n">three</span> <span class="ow">and</span> <span class="n">add</span> <span class="n">one</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In 1937, Collatz conjectured that the answer is “yes”. As of 2017, the conjecture
+has been checked for all inputs up to 87·2<sup>60</sup> but nobody has been able to prove it for all inputs [Roo19].
+Even straight-line programs can be difficult to reason about. Does the following program output true for some integer inputs?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">input</span><span class="p">;</span> <span class="n">y</span> <span class="o">=</span> <span class="nb">input</span><span class="p">;</span> <span class="n">z</span> <span class="o">=</span> <span class="nb">input</span><span class="p">;</span>
+<span class="n">output</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">*</span><span class="n">y</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span> <span class="n">z</span><span class="o">*</span><span class="n">z</span><span class="o">*</span><span class="n">z</span> <span class="o">==</span> <span class="mi">42</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>This was an open problem since 1954 until 2019 when the answer was found
+after over a million hours of computing [BS19].</p>
+<p>Rice’s theorem [Ric53] is a general result from 1953 which informally states that all interesting questions about the input/output behavior of programs (written in Turing-complete programming languages <a class="footnote-reference brackets" href="#id2" id="id1">1</a> ) are <em>undecidable</em>.
+This is easily seen for any special case. Assume for example the existence of an analyzer that decides if a variable in a program has a constant value in any execution.
+In other words, the analyzer is a program A that takes as input a program <span class="math notranslate nohighlight">\(T\)</span>, one of <span class="math notranslate nohighlight">\(T\)</span>’s variables <span class="math notranslate nohighlight">\(x\)</span>, and some value <span class="math notranslate nohighlight">\(k\)</span>, and decides whether or not <span class="math notranslate nohighlight">\(x\)</span>’s value is always equal to <span class="math notranslate nohighlight">\(k\)</span> whenever <span class="math notranslate nohighlight">\(T\)</span> is executed.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>From this point on, we only consider Turing complete languages.</p>
+</dd>
+</dl>
+<p>We could then exploit this analyzer to also decide the halting problem by using as input the following program where <span class="math notranslate nohighlight">\(TM(J)\)</span> simulates the <span class="math notranslate nohighlight">\(j\)</span>’th Turing machine on empty input:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">17</span><span class="p">;</span> <span class="k">if</span> <span class="p">(</span><span class="n">TM</span><span class="p">(</span><span class="n">j</span><span class="p">))</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">18</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Here <span class="math notranslate nohighlight">\(x\)</span> has a constant value <span class="math notranslate nohighlight">\(17\)</span> if and only if the <span class="math notranslate nohighlight">\(j\)</span>’th Turing machine does not halt on empty input.
+If the hypothetical constant-value analyzer <span class="math notranslate nohighlight">\(A\)</span> exists, then we have a decision procedure for the halting problem, which is known to be impossible [Tur37].</p>
+<p>At first, this seems like a discouraging result, however, this theoretical result does not prevent <em>approximative</em> answers.
+While it is impossible to build an analysis that would correctly decide a property for any analyzed program, it is often possible to build analysis tools that give useful answers for most realistic programs.
+As the ideal analyzer does not exist, there is always room for building more precise approximations (which is colloquially called the <em>full employment theorem for static program analysis designers</em>).</p>
+<p>Approximative answers may be useful for finding bugs in programs, which may be viewed as a weak form of program verification. As a case in point, consider programming with pointers in the C language.
+This is fraught with dangers such as <code class="docutils literal notranslate"><span class="pre">null</span></code> dereferences, dangling pointers, leaking memory, and unintended aliases. Ordinary compilers offer little protection from pointer errors.
+Consider the following small program which may perform every kind of error:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>int main(int argc, char *argv[]) {
+  if (argc == 42) {
+    char *p,*q;
+    p = NULL;
+    printf(&quot;%s&quot;,p);
+    q = (char *)malloc(100);
+    p = q;
+    free(q);
+    *p = ’x’;
+    free(p);
+    p = (char *)malloc(100);
+    p = (char *)malloc(100);
+    q = p;
+    strcat(p,q);
+    assert(argc &gt; 87);
+  }
+}
+</pre></div>
+</div>
+<p>Standard compiler tools such as gcc <code class="docutils literal notranslate"><span class="pre">-Wall</span></code> detect no errors in this program.
+Finding the errors by testing might miss the errors (for this program, no errors are encountered unless we happen to have a test case that runs the program with exactly 42 arguments).
+However, if we had even approximative answers to questions about <code class="docutils literal notranslate"><span class="pre">null</span></code> values, pointer targets, and branch conditions then many of the above errors could be caught statically, without actually running the program.</p>
+<div class="topic">
+<p class="topic-title">Exercise 1.1</p>
+<p>Describe all the pointer-related errors in the above program.</p>
+</div>
+<p>Ideally, the approximations we use are <em>conservative</em> (or safe), meaning that all errors lean to the same side, which is determined by our intended application.
+As an example, approximating the memory usage of programs is conservative if the estimates are never lower than what is actually possible when the programs are executed.
+Conservative approximations are closely related to the concept of soundness of program analyzers.
+We say that a program analyzer is <em>sound</em> if it never gives incorrect results (but it may answer <em>maybe</em>).
+Thus, the notion of soundness depends on the intended application of the analysis output, which may cause some confusion. For example, a verification tool is typically called sound if it never misses any errors of the kinds it has been designed to detect, but it is allowed to produce spurious warnings (also called false positives), whereas an automated testing tool is called sound if all reported errors are genuine, but it may miss errors.</p>
+<p>Program analyses that are used for optimizations typically require soundness.
+If given false information, the optimization may change the semantics of the
+program. Conversely, if given trivial information, then the optimization fails to
+do anything.</p>
+<p>Consider again the problem of determining if a variable has a constant value.
+If our intended application is to perform constant propagation optimization, then the analysis may only answer <em>yes</em> if the variable really is a constant and must answer <em>maybe</em> if the variable may or may not be a constant.
+The trivial solution is of course to answer maybe all the time, so we are facing the engineering challenge of answering <em>yes</em> as often as possible while obtaining a reasonable analysis performance.</p>
+<p>In the following chapters we focus on techniques for computing approximations that are conservative with respect to the semantics of the programming language.
+The theory of semantics-based abstract interpretation presented in Chapter 11 provides a solid mathematical framework for reasoning about analysis soundness and precision.
+Although soundness is a laudable goal in analysis design, modern analyzers for real programming languages often cut corners by sacrificing soundness to obtain better precision and performance, for example when modeling reflection in Java [LSS<sup>+</sup>15].</p>
+</div>
+<div class="section" id="undecidability-of-program-correctness">
+<h2>1.3 Undecidability of Program Correctness<a class="headerlink" href="#undecidability-of-program-correctness" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>(This section requires familiarity with the concept of universal Turing machines; it is not a prerequisite for the following chapters.)</p>
+<p>The reduction from the halting problem presented above shows that some static analysis problems are undecidable.
+However, halting is often the least of the concerns programmers have about whether their programs work correctly.
+For example, if we wish to ensure that the programs we write cannot crash with null pointer errors, we may be willing to assume that the programs do not also have problems with infinite loops.</p>
+<p>Using a diagonalization argument we can show a very strong result: It is impossible to build a static program analysis that can decide whether a given program may fail when executed.
+Moreover, this result holds even if the analysis is only required to work for programs that halt on all inputs.
+In other words, the halting problem is not the only obstacle; approximation is inevitably necessary.</p>
+<p>If we model programs as deterministic Turing machines, program failure can be modeled using a special <em>fail</em> state <a class="footnote-reference brackets" href="#id4" id="id3">2</a>.
+That is, on a given input, a Turing machine will eventually halt in its accept state (intuitively returning “yes”), in its reject state (intuitively returning “no”), in its fail state (meaning that the correctness condition has been violated), or the machine diverges (i.e., never halts).
+A Turing machine is <em>correct</em> if its fail state is unreachable.</p>
+<p>We can show the undecidability result using an elegant proof by contradiction.
+Assume <span class="math notranslate nohighlight">\(P\)</span> is a program that can decide whether or not any given total Turing machine is correct.
+(If the input to <span class="math notranslate nohighlight">\(P\)</span> is not a total Turing machine, <span class="math notranslate nohighlight">\(P\)</span>’s output is unspecified – we only require it to correctly analyze Turing machines that always halt.)
+Let us say that <span class="math notranslate nohighlight">\(P\)</span> halts in its accept state if and only if the given Turing machine is correct, and it halts in the reject state otherwise.
+Our goal is to show that <span class="math notranslate nohighlight">\(P\)</span> cannot exist.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id3">2</a></span></dt>
+<dd><p>Technically, we here restrict ourselves to safety properties; liveness properties can be addressed similarly using other models of computability.</p>
+</dd>
+</dl>
+<p>If <span class="math notranslate nohighlight">\(P\)</span> exists, then we can also build another Turing machine, let us call it <span class="math notranslate nohighlight">\(M\)</span>, that takes as input the encoding <span class="math notranslate nohighlight">\(e(T)\)</span> of a Turing machine <span class="math notranslate nohighlight">\(T\)</span> and then builds the encoding <span class="math notranslate nohighlight">\(e(S_T)\)</span> of yet another Turing machine <span class="math notranslate nohighlight">\(S_T\)</span> , which behaves as follows:
+<span class="math notranslate nohighlight">\(S_T\)</span> is essentially a universal Turing machine that is specialized to simulate <span class="math notranslate nohighlight">\(T\)</span> on input <span class="math notranslate nohighlight">\(e(T)\)</span>.
+Let <span class="math notranslate nohighlight">\(w\)</span> denote the input to <span class="math notranslate nohighlight">\(S_T\)</span> .
+Now <span class="math notranslate nohighlight">\(S_T\)</span> is constructed such that it simulates <span class="math notranslate nohighlight">\(T\)</span> on input <span class="math notranslate nohighlight">\(e(T)\)</span> for at most <span class="math notranslate nohighlight">\(|w|\)</span> moves.
+If the simulation ends in <span class="math notranslate nohighlight">\(T\)</span>’s accept state, then <span class="math notranslate nohighlight">\(S_T\)</span> goes to its fail state.
+It is obviously possible to create <span class="math notranslate nohighlight">\(S_T\)</span> in such a way that this is the only way it can reach its fail state.
+If the simulation does not end in <span class="math notranslate nohighlight">\(T\)</span>’s accept state (that is, <span class="math notranslate nohighlight">\(|w|\)</span> moves have been made, or the simulation reaches <span class="math notranslate nohighlight">\(T\)</span>’s reject or fail state), then <span class="math notranslate nohighlight">\(S_T\)</span> goes to its accept state or its reject state (which one we choose does not matter).
+This completes the explanation of how <span class="math notranslate nohighlight">\(S_T\)</span> works relative to <span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(w\)</span>.
+Note that <span class="math notranslate nohighlight">\(S_T\)</span> never diverges, and it reaches its fail state if and only if <cite>T</cite> accepts input <span class="math notranslate nohighlight">\(e(T)\)</span> after at most <span class="math notranslate nohighlight">\(|w|\)</span> moves.
+After building <span class="math notranslate nohighlight">\(e(S_T)\)</span>, <span class="math notranslate nohighlight">\(M\)</span> passes it to our hypothetical program analyzer <span class="math notranslate nohighlight">\(P\)</span>.
+Assuming that <span class="math notranslate nohighlight">\(P\)</span> works as promised, it ends in accept if <span class="math notranslate nohighlight">\(S_T\)</span> is correct, in which case we also let <span class="math notranslate nohighlight">\(M\)</span> halt in its accept state, and in reject otherwise, in which case <span class="math notranslate nohighlight">\(M\)</span> similarly halts in its reject state.</p>
+<p>We now ask: Does <span class="math notranslate nohighlight">\(M\)</span> accept input <span class="math notranslate nohighlight">\(e(M)\)</span>? That is, what happens if we run <span class="math notranslate nohighlight">\(M\)</span> with <span class="math notranslate nohighlight">\(T\)</span> = <span class="math notranslate nohighlight">\(M\)</span>?
+If <span class="math notranslate nohighlight">\(M\)</span> does accept input <span class="math notranslate nohighlight">\(e(M)\)</span>, it must be the case that <span class="math notranslate nohighlight">\(P\)</span> accepts input <span class="math notranslate nohighlight">\(e(S_T)\)</span>, which in turn means that <span class="math notranslate nohighlight">\(e(S_T)\)</span> is correct, so its fail state is unreachable.
+In other words, for any input w, no matter its length, <span class="math notranslate nohighlight">\(S_T\)</span> does not reach its fail state.
+This in turn means that <span class="math notranslate nohighlight">\(T\)</span> does not accept input <span class="math notranslate nohighlight">\(e(T)\)</span>.
+However, we have <span class="math notranslate nohighlight">\(T\)</span> = <span class="math notranslate nohighlight">\(M\)</span>, so this contradicts our assumption that <span class="math notranslate nohighlight">\(M\)</span> accepts input <span class="math notranslate nohighlight">\(e(M)\)</span>.
+Conversely, if <span class="math notranslate nohighlight">\(M\)</span> rejects input <span class="math notranslate nohighlight">\(e(M)\)</span>, then <span class="math notranslate nohighlight">\(P\)</span> rejects input <span class="math notranslate nohighlight">\(e(S_T)\)</span>, so the fail state of <span class="math notranslate nohighlight">\(S_T\)</span> is reachable for some input <span class="math notranslate nohighlight">\(v\)</span>.
+This means that there must exist some w such that the fail state of <span class="math notranslate nohighlight">\(S_T\)</span> is reached in <span class="math notranslate nohighlight">\(|w|\)</span> steps on input <span class="math notranslate nohighlight">\(v\)</span>, so <span class="math notranslate nohighlight">\(T\)</span> must accept input <span class="math notranslate nohighlight">\(e(T)\)</span>, and again we have a contradiction.
+By construction <span class="math notranslate nohighlight">\(M\)</span> halts in either accept or reject on any input, but neither is possible for input <span class="math notranslate nohighlight">\(e(M)\)</span>.
+In conclusion, the ideal program correctness analyzer <span class="math notranslate nohighlight">\(P\)</span> cannot exist.</p>
+<div class="topic">
+<p class="topic-title">Exercise 1.2</p>
+<p>In the above proof, the hypothetical program analyzer <span class="math notranslate nohighlight">\(P\)</span> is only required to correctly analyze programs that always halt.
+Show how the proof can be simplified if we want to prove the following weaker property: There exists no Turing machine <span class="math notranslate nohighlight">\(P\)</span> that can decide whether or not the fail state is reachable in a given Turing machine.
+(Note that the given Turing machine is now not assumed to be total.)</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="chapter02.html" class="btn btn-neutral float-right" title="A Tiny Imperative Programming Language" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="preface.html" class="btn btn-neutral float-left" title="前書き" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Anders Møller and Michael I. Schwartzbach.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
