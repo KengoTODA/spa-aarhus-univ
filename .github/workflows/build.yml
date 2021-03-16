@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  english:
+  japanese-doc:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -18,16 +18,11 @@ jobs:
           docker run --rm -v $(pwd):/docs spa-sphinx make html
       - uses: actions/upload-artifact@v1
         with:
-          name: English
+          name: Document
           path: _build/html
-  japanese:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - run: |
-          docker build -t spa-sphinx .
-          docker run --rm -v $(pwd):/docs spa-sphinx make -e SPHINXOPTS="-D language='ja'" html
-      - uses: actions/upload-artifact@v1
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.event_name == 'push' }}
         with:
-          name: Japanese
-          path: _build/html
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: _build/html
