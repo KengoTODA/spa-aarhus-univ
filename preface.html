@@ -173,33 +173,16 @@
 <h1>前書き<a class="headerlink" href="#preface" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <p>静的プログラム解析はプログラムを実行することなくその挙動を解析する芸術である。これはコンパイラが効率的なコードに最適化するときだけではなく、自動的にエラーを発見するなどプログラムを助ける道具にも効果的である。静的プログラム解析器は他のプログラムの挙動を解析するプログラムである。プログラミングに関心を持つ者にとって、プログラムを解析するプログラムを書くこと以上に楽しいことがあるだろうか？</p>
 <p>TuringとRiceによって知られるように、一般的なプログラミング言語で書かれたプログラムの振る舞いに関するすべての非自明な特性は、数学的に決定不可能である。すなわち、ソフトウェアの自動推論には一般的に近似性が求められる。同様にテスト、実際にプログラムを実行して出力を確認する行いは、エラーを発見することはできてもエラーがないことは示せないのが一般的である。これに対し、静的プログラム解析では、適切な近似値を用いることでプログラムのすべての実行可能性をチェックし、その特性を保証できる。このような解析を開発する際の重要な課題のひとつは、実用的な精度と効率をいかにして確保するかである。バグ発見のために開発された解析でも、誤検出が多かったり速度が遅すぎて実際のソフトウェア開発プロセスに適合しないようでは、誰も使わないからである。</p>
-<p>These notes present principles and applications of static analysis of programs. We cover basic type analysis, lattice theory, control flow graphs, dataflow
-analysis, fixed-point algorithms, widening and narrowing, path sensitivity, relational analysis, interprocedural analysis, context sensitivity, control-flow analysis, several flavors of pointer analysis, and key concepts of semantics-based
-abstract interpretation. A tiny imperative programming language with pointers and first-class functions is subjected to numerous different static analyses
-illustrating the techniques that are presented.
-We take a <em>constraint-based approach</em> to static analysis where suitable constraint
-systems conceptually divide the analysis task into a front-end that generates
-constraints from program code and a back-end that solves the constraints to
-produce the analysis results. This approach enables separating the analysis
-specification, which determines its precision, from the algorithmic aspects that
-are important for its performance. In practice when implementing analyses, we
-often solve the constraints on-the-fly, as they are generated, without representing
-them explicitly.</p>
-<p>We focus on analyses that are fully automatic (i.e., not involving programmer guidance, for example in the form of loop invariants or type annotations)
-and conservative (sound but incomplete), and we only consider Turing complete languages (like most programming languages used in ordinary software
-development).</p>
+<p>このノートでは、プログラムの静的解析の原理と応用を紹介する。基本的な型解析、格子理論、制御フローグラフ、データフロー解析、固定小数点アルゴリズム、ワイドニングとナローニング、パス感度、リレーショナル解析、プロシージャ間解析、文脈依存、制御フロー解析、いくつかのポインタ解析、そしてセマンティクスに基づく抽象的解釈の重要なコンセプトを扱う。ポインタと第一級関数を持つ小さな命令型プログラミング言語を対象に、数多くの異なる静的解析を行い、ここで紹介する技術を説明する。適切な制約システムにより、解析タスクを、プログラムコードから制約を生成するフロントエンドと、制約を解決して解析結果を生成するバックエンドに概念的に分割する、制約ベースの静的解析アプローチを採用している。このアプローチにより、解析の精度を決定する解析仕様と、解析のパフォーマンスに重要なアルゴリズムの側面とを分離できる。実際に解析を行う多くの場合は、制約条件を明示的に表現することなく、生成された制約条件をその場で解く。</p>
+<p>ここでは完全に自動化されていて（例えば、ループの外に出せる不変変数や型注釈のようなプログラマを指導するものは含まない）、保守的（健全だが不完全）な解析に焦点を当て、（通常のソフトウェア開発で使用されるほとんどのプログラミング言語のように）チューリング完全な言語のみを対象とする。</p>
 <p>私たちが扱う解析はさまざまな種類の制約システムで表現され、それぞれに固有の制約ソルバーを有する:</p>
 <ul class="simple">
-<li><p>term unification constraints, with an almost-linear union-find algorithm,</p></li>
-<li><p>conditional subset constraints, with a cubic-time algorithm, and</p></li>
-<li><p>monotone constraints over lattices, with variations of fixed-point solvers.</p></li>
+<li><p>ほぼ線形の組合わせ検索アルゴリズムで実装された項の単一化制約</p></li>
+<li><p><span class="math notranslate nohighlight">\(O(n^3)\)</span> のアルゴリズムで実装された条件付きサブセット制約</p></li>
+<li><p>様々な固定小数点ソルバーを持つ格子上の単調な制約</p></li>
 </ul>
-<p>The style of presentation is intended to be precise but not overly formal.
-The readers are assumed to be familiar with advanced programming language
-concepts and the basics of compiler construction and computability theory.</p>
-<p>The notes are accompanied by a web site that provides lecture slides, an
-implementation (in Scala) of most of the algorithms we cover, and additional
-exercises: <a class="reference external" href="https://cs.au.dk/˜amoeller/spa/">https://cs.au.dk/˜amoeller/spa/</a></p>
+<p>本書の表現は、正確でありながら過度にフォーマルではないことを意図している。読者は高度なプログラミング言語の概念と、コンパイラの実装や計算可能性理論の基礎に精通していることを前提とする。</p>
+<p>このノートには、講義のスライド、取り上げたアルゴリズムの（Scalaで書かれた）ほとんどの実装、追加の演習問題を提供するWebサイトが付属している: <a class="reference external" href="https://cs.au.dk/˜amoeller/spa/">https://cs.au.dk/˜amoeller/spa/</a></p>
 </div>
 
 
