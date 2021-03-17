@@ -1,0 +1,8 @@
+{
+    "plugins": {
+        "@arielairone/po": true
+    },
+    "rules": {
+        "preset-jtf-style": true
+    }
+}

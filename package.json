@@ -1,0 +1,24 @@
+{
+  "name": "spa-aarhus-univ",
+  "version": "1.0.0",
+  "description": "Japanese translation of [the lecture notes on Static Program Analysis held at the Department of Computer Science, Aarhus University](https://cs.au.dk/~amoeller/spa/).",
+  "main": "index.js",
+  "scripts": {
+    "test": "textlint locales/ja/LC_MESSAGES/*.po --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KengoTODA/spa-aarhus-univ.git"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/KengoTODA/spa-aarhus-univ/issues"
+  },
+  "homepage": "https://github.com/KengoTODA/spa-aarhus-univ#readme",
+  "devDependencies": {
+    "@arielairone/textlint-plugin-po": "^1.0.9",
+    "textlint": "^11.8.2",
+    "textlint-rule-preset-jtf-style": "^2.3.8"
+  }
+}
