@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../../bibliography.rst:2
 msgid "Bibliography"
-msgstr ""
+msgstr "参考文献一覧"
 
 #: ../../bibliography.rst:7
 msgid "[All70]"
