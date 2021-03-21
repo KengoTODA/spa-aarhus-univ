@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Static Program Analysis \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-15 03:41+0000\n"
+"POT-Creation-Date: 2021-03-21 01:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.0\n"
 
-#: ../../index.rst:9
+#: ../../index.rst:11
 msgid "Contents:"
 msgstr "コンテンツ:"
 
@@ -25,48 +25,58 @@ msgstr "コンテンツ:"
 msgid "Welcome to Static Program Analysis's documentation!"
 msgstr "静的プログラム解析のページにようこそ！"
 
-#: ../../index.rst:28
+#: ../../index.rst:9
+msgid ""
+"This is a Japanese translation of `the lecture notes on Static Program "
+"Analysis held at the Department of Computer Science, Aarhus University "
+"<https://cs.au.dk/~amoeller/spa/>`_."
+msgstr ""
+"このサイトは `Aarhus大学のコンピューターサイエンス学科で開講されている講義、"
+"静的プログラム解析で使われているレクチャーノート "
+"<https://cs.au.dk/~amoeller/spa/>`_ の日本語訳です。"
+
+#: ../../index.rst:30
 msgid "Copyright"
 msgstr "著作権表記"
 
-#: ../../index.rst:30
+#: ../../index.rst:32
 msgid "Copyright © 2008–2020 Anders Møller and Michael I. Schwartzbach"
 msgstr ""
 
-#: ../../index.rst:32
+#: ../../index.rst:34
 msgid "Department of Computer Science Aarhus University, Denmark"
 msgstr ""
 
-#: ../../index.rst:35
+#: ../../index.rst:37
 msgid ""
 "This work is licensed under the Creative Commons Attribution-"
 "NonCommercialNoDerivatives 4.0 International License. To view a copy of "
 "this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/."
 msgstr ""
 
-#: ../../index.rst:38
+#: ../../index.rst:40
 msgid "About this Japanese translation"
 msgstr "この日本語訳について"
 
-#: ../../index.rst:40
+#: ../../index.rst:42
 msgid ""
 "This Japanese translation is written by Kengo TODA, a member of `SpotBugs"
-" team <http://github.com/spotbugs/>`_. If you found any problems, feel "
+" team <https://github.com/spotbugs/>`_. If you found any problems, feel "
 "free to `issue tickets at GitHub <https://github.com/KengoTODA/spa-"
 "aarhus-univ/issues>`_."
 msgstr ""
-"この日本語訳は `SpotBugsチーム <http://github.com/spotbugs/>`_ の一員であるKengo TODAが作成しました。"
-"なにか問題を見つけましたら、お気軽に `GitHubにて報告ください <https://github.com/KengoTODA/spa-"
-"aarhus-univ/issues>`_ 。"
+"この日本語訳は `SpotBugsチーム <https://github.com/spotbugs/>`_ の一員であるKengo "
+"TODAが作成しました。なにか問題を見つけましたら、お気軽に `GitHubにて報告ください "
+"<https://github.com/KengoTODA/spa-aarhus-univ/issues>`_ 。"
 
-#: ../../index.rst:44
+#: ../../index.rst:46
 msgid "Indices and tables"
 msgstr "索引と表"
 
-#: ../../index.rst:46
+#: ../../index.rst:48
 msgid ":ref:`genindex`"
 msgstr ""
 
-#: ../../index.rst:47
+#: ../../index.rst:49
 msgid ":ref:`search`"
 msgstr ""

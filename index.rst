@@ -6,6 +6,8 @@
 Welcome to Static Program Analysis's documentation!
 ===================================================
 
+This is a Japanese translation of `the lecture notes on Static Program Analysis held at the Department of Computer Science, Aarhus University <https://cs.au.dk/~amoeller/spa/>`_.
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
@@ -37,7 +39,7 @@ This work is licensed under the Creative Commons Attribution-NonCommercialNoDeri
 About this Japanese translation
 ===============================
 
-This Japanese translation is written by Kengo TODA, a member of `SpotBugs team <http://github.com/spotbugs/>`_.
+This Japanese translation is written by Kengo TODA, a member of `SpotBugs team <https://github.com/spotbugs/>`_.
 If you found any problems, feel free to `issue tickets at GitHub <https://github.com/KengoTODA/spa-aarhus-univ/issues>`_.
 
 Indices and tables
