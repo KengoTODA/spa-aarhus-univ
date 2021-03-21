@@ -53,4 +53,4 @@ concepts and the basics of compiler construction and computability theory.
 
 The notes are accompanied by a web site that provides lecture slides, an
 implementation (in Scala) of most of the algorithms we cover, and additional
-exercises: `https://cs.au.dk/˜amoeller/spa/ <https://cs.au.dk/˜amoeller/spa/>`_
+exercises: `https://cs.au.dk/~amoeller/spa/ <https://cs.au.dk/~amoeller/spa/>`_
