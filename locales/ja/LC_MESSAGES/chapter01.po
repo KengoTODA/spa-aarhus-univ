@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Static Program Analysis \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-15 03:34+0000\n"
+"POT-Creation-Date: 2021-03-21 09:13+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -58,7 +58,9 @@ msgstr ""
 msgid ""
 "Does the program contain dead code, or more specifically, is function "
 ":math:`f` unreachable from main? If so, the code size can be reduced."
-msgstr "プログラムはデッドコード、あるいはより具体的に、mainから到達不能な関数 :math:`f` を含んでいるか？もし含むなら、そのコードを削ることができる。"
+msgstr ""
+"プログラムはデッドコード、あるいはより具体的に、mainから到達不能な関数 :math:`f` "
+"を含んでいるか？もし含むなら、そのコードを削ることができる。"
 
 #: ../../chapter01.rst:20
 msgid ""
@@ -227,12 +229,13 @@ msgstr "1.2. おおよその回答"
 msgid ""
 "Regarding correctness, programmers routinely use testing to gain "
 "confidence that their programs work as intended, but as famously stated "
-"by Dijkstra [Dij70]: *“Program testing can be used to show the presence "
-"of bugs, but never to show their absence.”* Ideally we want guarantees "
-"about what our programs may do for all possible inputs, and we want these"
-" guarantees to be provided automatically, that is, by programs. A "
-"*program analyzer* is such a program that takes other programs as input "
-"and decides whether or not they have a certain property."
+"by Dijkstra `[Dij70] <bibliography.html#dij70>`_: *“Program testing can "
+"be used to show the presence of bugs, but never to show their absence.”* "
+"Ideally we want guarantees about what our programs may do for all "
+"possible inputs, and we want these guarantees to be provided "
+"automatically, that is, by programs. A *program analyzer* is such a "
+"program that takes other programs as input and decides whether or not "
+"they have a certain property."
 msgstr ""
 
 #: ../../chapter01.rst:69
@@ -248,28 +251,30 @@ msgid ""
 "In 1937, Collatz conjectured that the answer is “yes”. As of 2017, the "
 "conjecture has been checked for all inputs up to 87·2\\ "
 ":superscript:`60`\\  but nobody has been able to prove it for all inputs "
-"[Roo19]. Even straight-line programs can be difficult to reason about. "
-"Does the following program output true for some integer inputs?"
+"`[Roo19] <bibliography.html#roo19>`_. Even straight-line programs can be "
+"difficult to reason about. Does the following program output true for "
+"some integer inputs?"
 msgstr ""
 
 #: ../../chapter01.rst:91
 msgid ""
 "This was an open problem since 1954 until 2019 when the answer was found "
-"after over a million hours of computing [BS19]."
+"after over a million hours of computing `[BS19] "
+"<bibliography.html#bs19>`_."
 msgstr ""
 
 #: ../../chapter01.rst:94
 msgid ""
-"Rice’s theorem [Ric53] is a general result from 1953 which informally "
-"states that all interesting questions about the input/output behavior of "
-"programs (written in Turing-complete programming languages [1]_ ) are "
-"*undecidable*. This is easily seen for any special case. Assume for "
-"example the existence of an analyzer that decides if a variable in a "
-"program has a constant value in any execution. In other words, the "
-"analyzer is a program A that takes as input a program :math:`T`, one of "
-":math:`T`’s variables :math:`x`, and some value :math:`k`, and decides "
-"whether or not :math:`x`’s value is always equal to :math:`k` whenever "
-":math:`T` is executed."
+"Rice’s theorem `[Ric53] <bibliography.html#ric53>`_ is a general result "
+"from 1953 which informally states that all interesting questions about "
+"the input/output behavior of programs (written in Turing-complete "
+"programming languages [1]_ ) are *undecidable*. This is easily seen for "
+"any special case. Assume for example the existence of an analyzer that "
+"decides if a variable in a program has a constant value in any execution."
+" In other words, the analyzer is a program A that takes as input a "
+"program :math:`T`, one of :math:`T`’s variables :math:`x`, and some value"
+" :math:`k`, and decides whether or not :math:`x`’s value is always equal "
+"to :math:`k` whenever :math:`T` is executed."
 msgstr ""
 
 #: ../../chapter01.rst:98
@@ -289,7 +294,7 @@ msgid ""
 ":math:`j`’th Turing machine does not halt on empty input. If the "
 "hypothetical constant-value analyzer :math:`A` exists, then we have a "
 "decision procedure for the halting problem, which is known to be "
-"impossible [Tur37]."
+"impossible `[Tur37] <bibliography.html#tur37>`_."
 msgstr ""
 
 #: ../../chapter01.rst:111
@@ -380,20 +385,20 @@ msgid ""
 "soundness is a laudable goal in analysis design, modern analyzers for "
 "real programming languages often cut corners by sacrificing soundness to "
 "obtain better precision and performance, for example when modeling "
-"reflection in Java [LSS\\ :superscript:`+`\\15]."
+"reflection in Java |[LSS15]|_."
 msgstr ""
 
-#: ../../chapter01.rst:169
+#: ../../chapter01.rst:175
 msgid "1.3 Undecidability of Program Correctness"
 msgstr ""
 
-#: ../../chapter01.rst:173
+#: ../../chapter01.rst:179
 msgid ""
 "(This section requires familiarity with the concept of universal Turing "
 "machines; it is not a prerequisite for the following chapters.)"
 msgstr ""
 
-#: ../../chapter01.rst:175
+#: ../../chapter01.rst:181
 msgid ""
 "The reduction from the halting problem presented above shows that some "
 "static analysis problems are undecidable. However, halting is often the "
@@ -403,7 +408,7 @@ msgid ""
 "the programs do not also have problems with infinite loops."
 msgstr ""
 
-#: ../../chapter01.rst:179
+#: ../../chapter01.rst:185
 msgid ""
 "Using a diagonalization argument we can show a very strong result: It is "
 "impossible to build a static program analysis that can decide whether a "
@@ -413,7 +418,7 @@ msgid ""
 "approximation is inevitably necessary."
 msgstr ""
 
-#: ../../chapter01.rst:183
+#: ../../chapter01.rst:189
 msgid ""
 "If we model programs as deterministic Turing machines, program failure "
 "can be modeled using a special *fail* state [2]_. That is, on a given "
@@ -424,7 +429,7 @@ msgid ""
 "machine is *correct* if its fail state is unreachable."
 msgstr ""
 
-#: ../../chapter01.rst:187
+#: ../../chapter01.rst:193
 msgid ""
 "We can show the undecidability result using an elegant proof by "
 "contradiction. Assume :math:`P` is a program that can decide whether or "
@@ -436,14 +441,14 @@ msgid ""
 "otherwise. Our goal is to show that :math:`P` cannot exist."
 msgstr ""
 
-#: ../../chapter01.rst:193
+#: ../../chapter01.rst:199
 msgid ""
 "Technically, we here restrict ourselves to safety properties; liveness "
 "properties can be addressed similarly using other models of "
 "computability."
 msgstr ""
 
-#: ../../chapter01.rst:195
+#: ../../chapter01.rst:201
 msgid ""
 "If :math:`P` exists, then we can also build another Turing machine, let "
 "us call it :math:`M`, that takes as input the encoding :math:`e(T)` of a "
@@ -470,7 +475,7 @@ msgid ""
 "which case :math:`M` similarly halts in its reject state."
 msgstr ""
 
-#: ../../chapter01.rst:209
+#: ../../chapter01.rst:215
 msgid ""
 "We now ask: Does :math:`M` accept input :math:`e(M)`? That is, what "
 "happens if we run :math:`M` with :math:`T` = :math:`M`? If :math:`M` does"
@@ -495,7 +500,7 @@ msgstr ""
 msgid "Exercise 1.2"
 msgstr ""
 
-#: ../../chapter01.rst:221
+#: ../../chapter01.rst:227
 msgid ""
 "In the above proof, the hypothetical program analyzer :math:`P` is only "
 "required to correctly analyze programs that always halt. Show how the "
@@ -504,4 +509,3 @@ msgid ""
 "whether or not the fail state is reachable in a given Turing machine. "
 "(Note that the given Turing machine is now not assumed to be total.)"
 msgstr ""
-

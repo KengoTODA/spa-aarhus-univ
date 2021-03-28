@@ -13,6 +13,8 @@ docker run --rm -v $(pwd):/docs spa-sphinx make gettext
 docker run --rm -v $(pwd):/docs spa-sphinx sphinx-intl update -p _build/gettext -l ja
 # build the document in Japansese
 docker run --rm -v $(pwd):/docs spa-sphinx make html
+# check broken link in reST
+docker run --rm -v $(pwd):/docs spa-sphinx make linkcheck
 ```
 
 ## Copyright

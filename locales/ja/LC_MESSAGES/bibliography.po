@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Static Program Analysis \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-21 01:36+0000\n"
+"POT-Creation-Date: 2021-03-21 01:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../../bibliography.rst:2
 msgid "Bibliography"
-msgstr ""
+msgstr "参考文献一覧"
 
 #: ../../bibliography.rst:7
 msgid "[All70]"
@@ -85,7 +85,7 @@ msgstr ""
 msgid ""
 "Andrew Booker and Andrew Sutherland. Sum of three cubes for 42 finally "
 "solved – using real life planetary computer. "
-"https://www.bristol.ac.uk/news/2019/september/ sum-of-three-cubes-.html, "
+"https://www.bristol.ac.uk/news/2019/september/sum-of-three-cubes-.html, "
 "2019."
 msgstr ""
 
@@ -445,4 +445,3 @@ msgid ""
 "Mitchell Wand. A simple algorithm and proof for type inference. "
 "Fundamenta Informaticae, 10(2):115–121, 1987."
 msgstr ""
-
