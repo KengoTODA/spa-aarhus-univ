@@ -1,4 +1,4 @@
-FROM sphinxdoc/sphinx:4.3.1
+FROM sphinxdoc/sphinx:4.3.2
 
 RUN /usr/local/bin/python -m pip install --upgrade pip
 # https://sphinx-rtd-theme.readthedocs.io/en/stable/
