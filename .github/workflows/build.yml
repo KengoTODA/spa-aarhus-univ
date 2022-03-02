@@ -12,7 +12,7 @@ jobs:
   japanese-doc:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2.4.0
+      - uses: actions/checkout@v3
       - run: |
           docker build -t spa-sphinx .
           docker run --rm -v $(pwd):/docs spa-sphinx make html
