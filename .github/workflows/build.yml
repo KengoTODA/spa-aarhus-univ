@@ -16,7 +16,7 @@ jobs:
       - run: |
           docker build -t spa-sphinx .
           docker run --rm -v $(pwd):/docs spa-sphinx make html
-      - uses: actions/upload-artifact@v2.3.1
+      - uses: actions/upload-artifact@v3
         with:
           name: Document
           path: _build/html
