@@ -17,6 +17,7 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
         <script src="_static/translations.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
@@ -88,10 +89,10 @@
            <div itemprop="articleBody">
              
   <section id="introduction">
-<h1>導入<a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h1>
+<h1>導入<a class="headerlink" href="#introduction" title="この見出しへのパーマリンク"></a></h1>
 <p>静的プログラム解析はプログラムのとりうる挙動に関する質問に自動的に回答することを目的とする。この章では、静的プログラム解析がなぜ有用で興味深いのかを解説し、また解析ツールの基本的な特徴について議論する。</p>
 <section id="applications-of-static-program-analysis">
-<h2>1.1 静的プログラム解析の応用<a class="headerlink" href="#applications-of-static-program-analysis" title="Permalink to this heading"></a></h2>
+<h2>1.1 静的プログラム解析の応用<a class="headerlink" href="#applications-of-static-program-analysis" title="この見出しへのパーマリンク"></a></h2>
 <p>静的プログラム解析は1960年代初頭、コンパイラの最適化から用いられた。さらに最近は不具合の発見や検証のための道具として、またIDEに組み込まれプログラム開発を助けている。以下では、これらの異なる応用で発生するプログラムの動作に関する問題について、いくつかの例を示します。</p>
 <p><strong>プログラム最適化のための解析</strong> コンパイラの最適化（インタプリタの実行時コンパイラを含む）は効率的なコードを生成するために、対象となるプログラムの様々な特性について知る必要がある。特性の一例を以下に挙げます:</p>
 <ul class="simple">
@@ -134,7 +135,7 @@ program analysis to support debugging, refactoring, and program understanding. T
 </ul>
 </section>
 <section id="approximative-answers">
-<h2>1.2. おおよその回答<a class="headerlink" href="#approximative-answers" title="Permalink to this heading"></a></h2>
+<h2>1.2. おおよその回答<a class="headerlink" href="#approximative-answers" title="この見出しへのパーマリンク"></a></h2>
 <p>Regarding correctness, programmers routinely use testing to gain confidence that their programs work as intended, but as famously stated by Dijkstra [Dij70]:
 <em>“Program testing can be used to show the presence of bugs, but never to show their absence.”</em>
 Ideally we want guarantees about what our programs may do for all possible inputs, and we want these guarantees to be provided automatically, that is, by programs.
@@ -222,7 +223,7 @@ The theory of semantics-based abstract interpretation presented in Chapter 11 pr
 Although soundness is a laudable goal in analysis design, modern analyzers for real programming languages often cut corners by sacrificing soundness to obtain better precision and performance, for example when modeling reflection in Java [LSS<sup>+</sup>15].</p>
 </section>
 <section id="undecidability-of-program-correctness">
-<h2>1.3 Undecidability of Program Correctness<a class="headerlink" href="#undecidability-of-program-correctness" title="Permalink to this heading"></a></h2>
+<h2>1.3 Undecidability of Program Correctness<a class="headerlink" href="#undecidability-of-program-correctness" title="この見出しへのパーマリンク"></a></h2>
 <p>(This section requires familiarity with the concept of universal Turing machines; it is not a prerequisite for the following chapters.)</p>
 <p>The reduction from the halting problem presented above shows that some static analysis problems are undecidable.
 However, halting is often the least of the concerns programmers have about whether their programs work correctly.
