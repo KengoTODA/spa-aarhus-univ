@@ -61,7 +61,7 @@ program analysis to support debugging, refactoring, and program understanding. T
 1.2 Approximative Answers
 -------------------------
 
-Regarding correctness, programmers routinely use testing to gain confidence that their programs work as intended, but as famously stated by Dijkstra [Dij70]:
+Regarding correctness, programmers routinely use testing to gain confidence that their programs work as intended, but as famously stated by Dijkstra `[Dij70] <bibliography.html#dij70>`_:
 *“Program testing can be used to show the presence of bugs, but never to show their absence.”*
 Ideally we want guarantees about what our programs may do for all possible inputs, and we want these guarantees to be provided automatically, that is, by programs.
 A *program analyzer* is such a program that takes other programs as input and decides whether or not they have a certain property.
@@ -80,7 +80,7 @@ on every integer input n (assuming arbitrary-precision integers)?
     }
 
 In 1937, Collatz conjectured that the answer is “yes”. As of 2017, the conjecture
-has been checked for all inputs up to 87·2\ :superscript:`60`\  but nobody has been able to prove it for all inputs [Roo19].
+has been checked for all inputs up to 87·2\ :superscript:`60`\  but nobody has been able to prove it for all inputs `[Roo19] <bibliography.html#roo19>`_.
 Even straight-line programs can be difficult to reason about. Does the following program output true for some integer inputs?
 
 ::
@@ -89,9 +89,9 @@ Even straight-line programs can be difficult to reason about. Does the following
     output x*x*x + y*y*y + z*z*z == 42;
 
 This was an open problem since 1954 until 2019 when the answer was found
-after over a million hours of computing [BS19].
+after over a million hours of computing `[BS19] <bibliography.html#bs19>`_.
 
-Rice’s theorem [Ric53] is a general result from 1953 which informally states that all interesting questions about the input/output behavior of programs (written in Turing-complete programming languages [1]_ ) are *undecidable*.
+Rice’s theorem `[Ric53] <bibliography.html#ric53>`_ is a general result from 1953 which informally states that all interesting questions about the input/output behavior of programs (written in Turing-complete programming languages [1]_ ) are *undecidable*.
 This is easily seen for any special case. Assume for example the existence of an analyzer that decides if a variable in a program has a constant value in any execution.
 In other words, the analyzer is a program A that takes as input a program :math:`T`, one of :math:`T`’s variables :math:`x`, and some value :math:`k`, and decides whether or not :math:`x`’s value is always equal to :math:`k` whenever :math:`T` is executed.
 
@@ -106,7 +106,7 @@ We could then exploit this analyzer to also decide the halting problem by using 
     x = 17; if (TM(j)) x = 18;
 
 Here :math:`x` has a constant value :math:`17` if and only if the :math:`j`’th Turing machine does not halt on empty input.
-If the hypothetical constant-value analyzer :math:`A` exists, then we have a decision procedure for the halting problem, which is known to be impossible [Tur37].
+If the hypothetical constant-value analyzer :math:`A` exists, then we have a decision procedure for the halting problem, which is known to be impossible `[Tur37] <bibliography.html#tur37>`_.
 
 At first, this seems like a discouraging result, however, this theoretical result does not prevent *approximative* answers.
 While it is impossible to build an analysis that would correctly decide a property for any analyzed program, it is often possible to build analysis tools that give useful answers for most realistic programs.
@@ -163,7 +163,13 @@ The trivial solution is of course to answer maybe all the time, so we are facing
 
 In the following chapters we focus on techniques for computing approximations that are conservative with respect to the semantics of the programming language.
 The theory of semantics-based abstract interpretation presented in Chapter 11 provides a solid mathematical framework for reasoning about analysis soundness and precision.
-Although soundness is a laudable goal in analysis design, modern analyzers for real programming languages often cut corners by sacrificing soundness to obtain better precision and performance, for example when modeling reflection in Java [LSS\ :superscript:`+`\15].
+Although soundness is a laudable goal in analysis design, modern analyzers for real programming languages often cut corners by sacrificing soundness to obtain better precision and performance, for example when modeling reflection in Java |[LSS15]|_.
+
+.. reST does not support nesting inline markup, so applying workaround
+.. https://docutils.sourceforge.io/FAQ.html#is-nested-inline-markup-possible
+
+.. |[LSS15]| replace:: [LSS\ :superscript:`+`\15]
+.. _[LSS15]: bibliography.html#lss15
 
 1.3 Undecidability of Program Correctness
 -----------------------------------------
